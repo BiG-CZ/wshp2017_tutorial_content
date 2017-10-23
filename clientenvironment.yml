@@ -1,0 +1,15 @@
+name: odm2client
+channels:
+- odm2
+- conda-forge
+dependencies:
+- odm2pythonapi
+- yodatools
+- requests
+- folium
+- geopandas
+- ulmo
+- owslib
+- scipy
+- xarray
+- ipykernel
