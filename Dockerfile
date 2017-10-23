@@ -14,24 +14,20 @@ RUN apt-get update && \
 
 USER $NB_USER
 
+COPY clientenvironment.yml /tmp/clientenvironment.yml
+
+RUN cd /home/$NB_USER/ && \
+    git clone https://github.com/BiG-CZ/wshp2017_tutorial_content.git tutorial_contents && \
+    rm -rf /home/$NB_USER/work
+
 # Install Python 3 packages
-# Remove pyqt and qt pulled in for matplotlib since we're only ever going to
 # use notebook-friendly backends in these images
 RUN conda install -c conda-forge --quiet --yes \
     'nb_conda_kernels' \
     'ipykernel' \
     'ipywidgets' && \
-    conda create -n odm2client -c odm2 -c conda-forge --quiet --yes \
-    'odm2api' \
-    'yodatools' \
-    'requests' \
-    'folium' \
-    'geopandas' \
-    'ulmo' \
-    'owslib' \
-    'scipy' \
-    'xarray' \
-    'ipykernel' && \
+    conda env create --file /tmp/clientenvironment.yml && \
+    rm /tmp/clientenvironment.yml && \
     conda clean -tipsy && \
     # Activate ipywidgets extension in the environment that runs the notebook server
     jupyter nbextension enable --py widgetsnbextension --sys-prefix && \

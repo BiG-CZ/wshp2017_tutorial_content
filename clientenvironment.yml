@@ -3,7 +3,7 @@ channels:
 - odm2
 - conda-forge
 dependencies:
-- odm2pythonapi
+- odm2api
 - yodatools
 - requests
 - folium
