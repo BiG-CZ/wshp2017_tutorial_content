@@ -1,6 +1,6 @@
 # Retrieved from https://github.com/jupyter/docker-stacks/blob/master/scipy-notebook/Dockerfile
 
-FROM jupyter/minimal-notebook
+FROM jupyter/minimal-notebook:8e15d329f1e9
 
 MAINTAINER Landung Setiawan <landungs@uw.edu>
 
