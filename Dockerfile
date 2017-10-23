@@ -31,7 +31,6 @@ RUN conda install -c conda-forge --quiet --yes \
     'scipy' \
     'xarray' \
     'ipykernel' && \
-    conda remove --quiet --yes --force qt pyqt && \
     conda clean -tipsy && \
     # Activate ipywidgets extension in the environment that runs the notebook server
     jupyter nbextension enable --py widgetsnbextension --sys-prefix && \
