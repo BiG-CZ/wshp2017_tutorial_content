@@ -21,7 +21,7 @@ RUN conda install -c conda-forge --quiet --yes \
     'nb_conda_kernels' \
     'ipykernel' && \
     conda create -n odm2client -c odm2 -c conda-forge --quiet --yes \
-    'odm2pythonapi' \
+    'odm2api' \
     'yodatools' \
     'requests' \
     'folium' \
