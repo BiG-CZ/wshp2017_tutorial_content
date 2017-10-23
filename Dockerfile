@@ -19,7 +19,8 @@ USER $NB_USER
 # use notebook-friendly backends in these images
 RUN conda install -c conda-forge --quiet --yes \
     'nb_conda_kernels' \
-    'ipykernel' && \
+    'ipykernel' \
+    'ipywidgets' && \
     conda create -n odm2client -c odm2 -c conda-forge --quiet --yes \
     'odm2api' \
     'yodatools' \
