@@ -30,7 +30,7 @@ RUN conda install -c conda-forge --quiet --yes \
     conda env create --file /home/$NB_USER/clientenvironment.yml && \
     rm /home/$NB_USER/clientenvironment.yml && \
     conda env create --file /home/$NB_USER/bigcz_r_environment.yml && \
-    rm /home/$NB_USER/bigcz_r_environment.yml
+    rm /home/$NB_USER/bigcz_r_environment.yml && \
     conda clean -tipsy && \
     # Activate ipywidgets extension in the environment that runs the notebook server
     jupyter nbextension enable --py widgetsnbextension --sys-prefix
