@@ -32,6 +32,10 @@ RUN conda install -c conda-forge --quiet --yes \
     # Activate ipywidgets extension in the environment that runs the notebook server
     jupyter nbextension enable --py widgetsnbextension --sys-prefix;
 
+    # Install R packages
+RUN /opt/conda/envs/odm2client/bin/R -e 'options(unzip = "internal"); devtools::install_github("ramnathv/rCharts")' && \
+    /opt/conda/envs/odm2client/bin/R -e 'install.packages("WaterML", repos="http://cran.us.r-project.org")';
+
 RUN rm -rf /home/$NB_USER/work;
 
 USER $NB_USER

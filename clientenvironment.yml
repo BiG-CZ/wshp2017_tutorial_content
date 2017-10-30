@@ -18,7 +18,10 @@ dependencies:
 - r=3.3.2
 - r-xml
 - r-rjsonio
+- r-rcurl
+- r-yaml
 - r-irkernel
 - r-ggplot2
 - r-tidyverse
 - r-lubridate
+- r-devtools
