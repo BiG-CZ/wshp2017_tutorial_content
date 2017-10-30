@@ -15,7 +15,6 @@ RUN apt-get update && \
 USER $NB_USER
 
 COPY clientenvironment.yml /home/$NB_USER/clientenvironment.yml
-COPY bigcz_r_environment.yml /home/$NB_USER/bigcz_r_environment.yml
 
 #RUN cd /home/$NB_USER/ && \
 #    git clone https://github.com/BiG-CZ/wshp2017_tutorial_content.git tutorial_contents && \
