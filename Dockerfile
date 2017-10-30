@@ -10,7 +10,7 @@ USER root
 RUN apt-get update && \
     apt-get install -y --no-install-recommends libav-tools && \
     apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+    rm -rf /var/lib/apt/lists/*;
 
 USER $NB_USER
 
@@ -29,10 +29,10 @@ RUN conda install -c conda-forge --quiet --yes \
     'ipywidgets' && \
     conda env create --file /home/$NB_USER/clientenvironment.yml && \
     rm /home/$NB_USER/clientenvironment.yml && \
-    conda env create --file /home/$NB_USER/bigcz_r_environment.yml && \
-    rm /home/$NB_USER/bigcz_r_environment.yml && \
     conda clean -tipsy && \
     # Activate ipywidgets extension in the environment that runs the notebook server
     jupyter nbextension enable --py widgetsnbextension --sys-prefix;
+
+RUN rm -rf /home/$NB_USER/work;
 
 USER $NB_USER

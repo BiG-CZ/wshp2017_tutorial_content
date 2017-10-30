@@ -2,6 +2,7 @@ name: odm2client
 channels:
 - odm2
 - conda-forge
+- r
 dependencies:
 - odm2api
 - yodatools
@@ -13,3 +14,9 @@ dependencies:
 - scipy
 - xarray
 - ipykernel
+# R-Packages
+- r=3.3.2
+- r-irkernel
+- r-ggplot2
+- r-tidyverse
+- r-lubridate
