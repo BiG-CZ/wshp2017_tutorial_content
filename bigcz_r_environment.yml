@@ -4,6 +4,7 @@ channels:
 - conda-forge
 - r
 dependencies:
+- ipykernel
 - r=3.3.2
 - r-irkernel
 - r-ggplot2
