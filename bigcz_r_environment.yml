@@ -1,0 +1,11 @@
+name: bigcz-r
+channels:
+- odm2
+- conda-forge
+- r
+dependencies:
+- r=3.3.2
+- r-irkernel
+- r-ggplot2
+- r-tidyverse
+- r-lubridate
