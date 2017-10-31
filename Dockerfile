@@ -38,4 +38,8 @@ RUN /opt/conda/envs/odm2client/bin/R -e 'options(unzip = "internal"); devtools::
 
 RUN rm -rf /home/$NB_USER/work;
 
+USER root
+
+RUN echo "$NB_USER ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/notebook
+
 USER $NB_USER
