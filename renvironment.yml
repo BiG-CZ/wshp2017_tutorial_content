@@ -1,0 +1,20 @@
+name: renvironment
+channels:
+- conda-forge
+- r
+dependencies:
+- r=3.3.2
+- r-xml
+- r-rjsonio
+- r-rcurl
+- r-yaml
+- r-irkernel
+- r-ggplot2
+- r-tidyverse
+- r-lubridate
+- r-devtools
+- icu=58.*
+# Rcharts
+# options(unzip = "internal"); devtools::install_github("ramnathv/rCharts")
+# WaterML
+# install.packages("WaterML", repos="http://cran.us.r-project.org")

@@ -22,10 +22,21 @@ COPY clientenvironment.yml /home/$NB_USER/clientenvironment.yml
 
 # Install Python 3 packages and Create R environment
 # use notebook-friendly backends in these images
-RUN conda install -c conda-forge --quiet --yes \
+RUN conda install -c conda-forge -c r --quiet --yes \
     'nb_conda_kernels' \
     'ipykernel' \
-    'ipywidgets' && \
+    'ipywidgets' \
+    'icu=58.*' \
+    'r=3.3.2' \
+    'r-xml' \
+    'r-rjsonio' \
+    'r-rcurl' \
+    'r-yaml' \
+    'r-irkernel' \
+    'r-ggplot2' \
+    'r-tidyverse' \
+    'r-lubridate' \
+    'r-devtools' && \
     conda env create --file /home/$NB_USER/clientenvironment.yml && \
     rm /home/$NB_USER/clientenvironment.yml && \
     conda clean -tipsy && \
@@ -33,8 +44,8 @@ RUN conda install -c conda-forge --quiet --yes \
     jupyter nbextension enable --py widgetsnbextension --sys-prefix;
 
     # Install R packages
-RUN /opt/conda/envs/odm2client/bin/R -e 'options(unzip = "internal"); devtools::install_github("ramnathv/rCharts")' && \
-    /opt/conda/envs/odm2client/bin/R -e 'install.packages("WaterML", repos="http://cran.us.r-project.org")';
+RUN /opt/conda/bin/R -e 'options(unzip = "internal"); devtools::install_github("ramnathv/rCharts")' && \
+    /opt/conda/bin/R -e 'install.packages("WaterML", repos="http://cran.us.r-project.org")';
 
 RUN rm -rf /home/$NB_USER/work;
 
