@@ -2,7 +2,6 @@ name: odm2client
 channels:
 - odm2
 - conda-forge
-- r
 dependencies:
 - odm2api
 - yodatools
