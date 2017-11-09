@@ -5,6 +5,7 @@ channels:
 dependencies:
 - odm2api
 - yodatools
+- xlrd
 - requests
 - folium
 - geopandas
