@@ -3,16 +3,16 @@ channels:
 - odm2
 - conda-forge
 dependencies:
+- python=2.7
 - odm2api
 - yodatools
-- xlrd
 - requests
-- folium
-- geopandas
-- ulmo
-- owslib
 - scipy
 - xarray
+- folium
+- geopandas
+- owslib
+- ulmo
 # Jupyter notebook
 - ipykernel
 - jupyter
