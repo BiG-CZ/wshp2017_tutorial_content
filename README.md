@@ -12,9 +12,9 @@ Once you're on JupyterHub, click on the "Start My Server" button and wait a bit 
 
 1. On the `Jupyter Notebooks` interface, on the upper right click on the "New" button and select `Other: Terminal` to start a terminal (shell) session. A new browser tab or window will be opened, and the terminal will start on your home account directory, `/home/jovyan`.
 2. "Clone" the github tutorial repository by entering the following command (you can copy and paste):
-```bash
-git clone https://github.com/BiG-CZ/wshp2017_tutorial_content.git
-```
+    ```bash
+    git clone https://github.com/BiG-CZ/wshp2017_tutorial_content.git
+    ```
 A new directory will be created with the tutorial materials at the directory path `/home/jovyan/wshp2017_tutorial_content`. All tutorial work will be done under this directory.
 3. Finally, exit the terminal by typing `exit` and closing the terminal browser tab or window.
 
@@ -25,13 +25,13 @@ On Jupyter Notebook you will now see a `wshp2017_tutorial_content` folder. Click
 As you work with notebooks, you may make changes to the notebook or data files that you'd like to undo or can no longer fix. In addition, the tutorial github repository may be updated after you cloned it. To discard your tutorial files and reload from github:
 1. Open a terminal from Jupyter Notebooks.
 2. Change to the tutorial directory by typing this command:
-```bash
-cd /home/jovyan/wshp2017_tutorial_content
-```
+    ```bash
+    cd /home/jovyan/wshp2017_tutorial_content
+    ```
 3. Update from github with this command:
-```bash
-git pull --force
-```
+    ```bash
+    git pull --force
+    ```
 4. Exit the terminal window (see instructions above)
 
 
