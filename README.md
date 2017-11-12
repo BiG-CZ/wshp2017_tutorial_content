@@ -28,9 +28,10 @@ As you work with notebooks, you may make changes to the notebook or data files t
     ```bash
     cd /home/jovyan/wshp2017_tutorial_content
     ```
-3. Update from github with this command:
+3. Update from github with these commands:
     ```bash
-    git pull --force
+    git reset --hard && git clean -f
+    git pull
     ```
 4. Exit the terminal window (see instructions above)
 
