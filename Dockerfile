@@ -48,7 +48,8 @@ RUN conda install -c conda-forge -c r --quiet --yes \
     'r-hmisc' \
     'r-mvtnorm' \
     'r-igraph' \
-    'r-vegan' && \
+    'r-vegan' \
+    'r-aqp' && \
     conda env create --file /home/$NB_USER/clientenvironment.yml && \
     rm /home/$NB_USER/clientenvironment.yml && \
     conda clean -tipsy && \
@@ -60,9 +61,10 @@ RUN /opt/conda/bin/R -e 'options(unzip = "internal"); devtools::install_github("
     /opt/conda/bin/R -e 'install.packages("WaterML", repos="http://cran.us.r-project.org")' && \
     /opt/conda/bin/R -e 'install.packages("dismo", repos="http://cran.us.r-project.org")' && \
     /opt/conda/bin/R -e 'install.packages("rgeos", repos="http://cran.us.r-project.org")' && \
-    /opt/conda/bin/R -e 'install.packages("aqp", repos="http://cran.us.r-project.org")' && \
-    /opt/conda/bin/R -e 'install.packages("soilDB", repos="http://cran.us.r-project.org")' && \
-    /opt/conda/bin/R -e 'install.packages("sharpshootR", repos="http://cran.us.r-project.org")';
+    /opt/conda/bin/R -e 'install.packages("ape", repos="http://cran.us.r-project.org")' && \
+    /opt/conda/bin/R -e 'install.packages("circular", repos="http://cran.us.r-project.org")' && \
+    /opt/conda/bin/R -e 'options(unzip = "internal"); devtools::install_github("ncss-tech/soilDB", dependencies=FALSE, upgrade_dependencies=FALSE)' && \
+    /opt/conda/bin/R -e 'options(unzip = "internal"); devtools::install_github("ncss-tech/sharpshootR", dependencies=FALSE, upgrade_dependencies=FALSE)';
 
 RUN rm -rf /home/$NB_USER/work;
 

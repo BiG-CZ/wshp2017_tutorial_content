@@ -25,13 +25,16 @@ dependencies:
 - r-tidyverse
 - r-lubridate
 - r-devtools
+- r-waterml
+- r-aqp
 - icu=58.*
-# Rcharts
-# options(unzip = "internal"); devtools::install_github("ramnathv/rCharts")
-# WaterML
-# install.packages("WaterML", repos="http://cran.us.r-project.org")
+# Note: packages below needs to be installed manually
+# Rcharts ---
+# devtools::install_github("ramnathv/rCharts")
+# Soil-related Packages ---
 # install.packages("dismo", repos="http://cran.us.r-project.org")
 # install.packages("rgeos", repos="http://cran.us.r-project.org")
-# install.packages("aqp", repos="http://cran.us.r-project.org")
-# install.packages("soilDB", repos="http://cran.us.r-project.org")
-# install.packages("sharpshootR", repos="http://cran.us.r-project.org")
+# install.packages("ape", repos="http://cran.us.r-project.org")
+# install.packages("circular", repos="http://cran.us.r-project.org")
+# devtools::install_github("ncss-tech/soilDB", dependencies=FALSE, upgrade_dependencies=FALSE)
+# devtools::install_github("ncss-tech/sharpshootR", dependencies=FALSE, upgrade_dependencies=FALSE)
