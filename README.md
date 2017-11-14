@@ -1,6 +1,6 @@
 # Tutorial Contents, BiG CZ user workshop, Nov. 15-16, 2017
 
-This repository contains tutorial (hands-on demos) materials (Jupyter notebooks, supporting code, data files, and conda environment files) for the BiG CZ user workshop, November 15-16, 2017. It is intended for `git` cloning into your personal JupyterHub user space or your local computer. 
+This repository contains tutorial (hands-on demos) materials (Jupyter notebooks, supporting code, data files, and conda environment files) for the BiG CZ user workshop, November 15-16, 2017. It is intended for `git` cloning into your personal [JupyterHub](https://jupyterhub.readthedocs.io) user space or your local computer. 
 
 ## Access JupyterHub
 
