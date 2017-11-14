@@ -5,7 +5,19 @@ channels:
 dependencies:
 - r=3.3.2
 - r-xml
+- r-xml2
+- r-rgdal
 - r-rjsonio
+- r-jsonlite
+- r-rodbc
+- r-httr
+- r-rvest
+- r-e1071
+- r-acepack
+- r-hmisc
+- r-mvtnorm
+- r-igraph
+- r-vegan
 - r-rcurl
 - r-yaml
 - r-irkernel
@@ -18,3 +30,8 @@ dependencies:
 # options(unzip = "internal"); devtools::install_github("ramnathv/rCharts")
 # WaterML
 # install.packages("WaterML", repos="http://cran.us.r-project.org")
+# install.packages("dismo", repos="http://cran.us.r-project.org")
+# install.packages("rgeos", repos="http://cran.us.r-project.org")
+# install.packages("aqp", repos="http://cran.us.r-project.org")
+# install.packages("soilDB", repos="http://cran.us.r-project.org")
+# install.packages("sharpshootR", repos="http://cran.us.r-project.org")

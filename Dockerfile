@@ -8,7 +8,7 @@ USER root
 
 # libav-tools for matplotlib anim
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends libav-tools && \
+    apt-get install -y --no-install-recommends libav-tools gfortran && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*;
 
@@ -36,7 +36,19 @@ RUN conda install -c conda-forge -c r --quiet --yes \
     'r-ggplot2' \
     'r-tidyverse' \
     'r-lubridate' \
-    'r-devtools' && \
+    'r-devtools' \
+    'r-xml2' \
+    'r-rgdal' \
+    'r-jsonlite' \
+    'r-rodbc' \
+    'r-httr' \
+    'r-rvest' \
+    'r-e1071' \
+    'r-acepack' \
+    'r-hmisc' \
+    'r-mvtnorm' \
+    'r-igraph' \
+    'r-vegan' && \
     conda env create --file /home/$NB_USER/clientenvironment.yml && \
     rm /home/$NB_USER/clientenvironment.yml && \
     conda clean -tipsy && \
@@ -45,7 +57,12 @@ RUN conda install -c conda-forge -c r --quiet --yes \
 
     # Install R packages
 RUN /opt/conda/bin/R -e 'options(unzip = "internal"); devtools::install_github("ramnathv/rCharts")' && \
-    /opt/conda/bin/R -e 'install.packages("WaterML", repos="http://cran.us.r-project.org")';
+    /opt/conda/bin/R -e 'install.packages("WaterML", repos="http://cran.us.r-project.org")' && \
+    /opt/conda/bin/R -e 'install.packages("dismo", repos="http://cran.us.r-project.org")' && \
+    /opt/conda/bin/R -e 'install.packages("rgeos", repos="http://cran.us.r-project.org")' && \
+    /opt/conda/bin/R -e 'install.packages("aqp", repos="http://cran.us.r-project.org")' && \
+    /opt/conda/bin/R -e 'install.packages("soilDB", repos="http://cran.us.r-project.org")' && \
+    /opt/conda/bin/R -e 'install.packages("sharpshootR", repos="http://cran.us.r-project.org")';
 
 RUN rm -rf /home/$NB_USER/work;
 
