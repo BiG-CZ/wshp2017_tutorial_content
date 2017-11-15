@@ -6,60 +6,12 @@ from IPython.display import display, HTML
 import ipywidgets as widgets
 from ipywidgets import Layout, HBox, Label
 import numpy as np
-from bokeh.plotting import figure, show
-from bokeh.models import ColumnDataSource,CustomJS
 from odm2api.ODM2.models import *
 
 def getSecurePassword():
     u = getpass.getuser('Enter the ODM2 username')
     return u
 
-def selectPlot(s1,selectedResult):
-    TOOLS = "box_select,lasso_select,help"
-    
-    for result in selectedResult:
-        xaxistitle = str(result.variableCode)
-    p = figure(tools=TOOLS, plot_width=400, plot_height=400, x_axis_type="datetime", 
-              title = xaxistitle)
-    p.circle('x', 'y', source=s1)
-    #selected = []
-    #def toolEventsCallback(attr, old, new):
-    #    print("callback", new)
-    #    python = new[0]['python']
-    #    pypy = new[0]['pypy']
-    #    print("python=%f  pypy=%f" % (python, pypy))
-    #    selected.append([python, pypy])
-    #p.tool_events.on_change("lasso_select", toolEventsCallback)
-
-    s2 = ColumnDataSource(data=dict(x=[], y=[]))
-    data = s1.data
-    maximum = np.nanmax(data['y'])
-    minimum = np.nanmin(data['y'])
-    minimum = minimum[0]
-    maximum = maximum[0]
-    #print(minimum)
-    #print(maximum)
-    p2 = figure(plot_width=400, plot_height=400, y_range=(minimum*.9, maximum*1.1), x_axis_type="datetime",
-                tools="", title="Selected Data")
-    p2.circle('x', 'y', source=s2, alpha=0.6)
-    s1.callback = CustomJS(args=dict(s2=s2), code="""
-            var inds = cb_obj.changed.selected['1d'].indices;
-            var d1 = cb_obj.attributes.data;
-            var d2 = s2.attributes.data;
-            d2['x'] = [];
-            d2['y'] = [];
-            for (i = 0; i < inds.length; i++) {
-                d2['x'].push(d1['x'][inds[i]]);
-                d2['y'].push(d1['y'][inds[i]]);
-            }
-            console.log(d2);
-            var kernel = IPython.notebook.kernel;
-            IPython.notebook.kernel.execute("inds = " + inds);
-            s2.trigger('change');
-        """)
-    
-    plot = hplot(p, p2)
-    return plot
 
 def ODM2LoginPrompt():
     container = widgets.Box() # would be nice If I could get a container to hold the 
