@@ -18,19 +18,19 @@ def ODM2LoginPrompt():
     # user name and password prompt, getpass doesn't seem to play well with the other 
     # widgets though
     username_text = widgets.Text(
-        value='', placeholder='Enter username',
+        value='demo', placeholder='Enter username',
         description='', disabled=False)
     username_output_text = widgets.Text(
         value='', placeholder='Enter username',
         description='Username',disabled=False)
     database_address_text = widgets.Text(
-        value='', placeholder='Enter database address',
+        value='40.85.180.138', placeholder='Enter database address',
         description='',disabled=False)
     database_address_output_text = widgets.Text(
         value='',placeholder='Enter database address',
         description='database address',disabled=False)
     database_text = widgets.Text(
-        value='', placeholder='Enter database name',
+        value='odm2sandbox', placeholder='Enter database name',
         description='', disabled=False)
     database_output_text = widgets.Text(
         value='', placeholder='Enter database name',
