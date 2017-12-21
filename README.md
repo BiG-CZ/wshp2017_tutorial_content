@@ -1,5 +1,7 @@
 # Tutorial Contents, BiG CZ user workshop, Nov. 15-16, 2017
 
+[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/BiG-CZ/wshp2017_tutorial_content/master)
+
 This repository contains tutorial (hands-on demos) materials (Jupyter notebooks, supporting code, data files, and conda environment files) for the [2017 BiG-CZ/ODM2 Hands-On Workshop](https://github.com/BiG-CZ/bigcz_wshp2017). It is intended for `git` cloning into your personal [JupyterHub](https://jupyterhub.readthedocs.io) user space or your local computer. 
 
 ## Access JupyterHub
