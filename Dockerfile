@@ -22,7 +22,8 @@ COPY . /home/$NB_USER/
 
 # Install Python 3 packages and Create R environment
 # use notebook-friendly backends in these images
-RUN conda install -c conda-forge -c r --quiet --yes \
+RUN conda env create --file /home/$NB_USER/clientenvironment.yml && \
+    conda install -c conda-forge -c r --quiet --yes \
     'nb_conda_kernels' \
     'ipykernel' \
     'ipywidgets' \
@@ -50,7 +51,6 @@ RUN conda install -c conda-forge -c r --quiet --yes \
     'r-igraph' \
     'r-vegan' \
     'r-aqp' && \
-    conda env create --file /home/$NB_USER/clientenvironment.yml && \
     conda clean -tipsy && \
     # Activate ipywidgets extension in the environment that runs the notebook server
     jupyter nbextension enable --py widgetsnbextension --sys-prefix;
