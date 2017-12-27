@@ -14,7 +14,7 @@ RUN apt-get update && \
 
 USER $NB_USER
 
-COPY clientenvironment.yml /home/$NB_USER/clientenvironment.yml
+COPY . /home/$NB_USER/
 
 #RUN cd /home/$NB_USER/ && \
 #    git clone https://github.com/BiG-CZ/wshp2017_tutorial_content.git tutorial_contents && \
@@ -51,7 +51,6 @@ RUN conda install -c conda-forge -c r --quiet --yes \
     'r-vegan' \
     'r-aqp' && \
     conda env create --file /home/$NB_USER/clientenvironment.yml && \
-    rm /home/$NB_USER/clientenvironment.yml && \
     conda clean -tipsy && \
     # Activate ipywidgets extension in the environment that runs the notebook server
     jupyter nbextension enable --py widgetsnbextension --sys-prefix;
